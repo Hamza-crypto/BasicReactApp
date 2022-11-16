@@ -1,7 +1,16 @@
-const Header = (props) => {
+import Button from "./Button";
+import React from 'react';
+
+const Header = ({ title }) => {
+
+    const onclick = (e) => {
+        console.log('click');
+    }
+
     return (
-        <header>
-            <h1>{props.title}</h1>
+        <header className='header'>
+            <h1 >{ title }</h1>
+            <Button text='Add' color='green' onClick={onclick}/>
         </header>
     )
 }
@@ -9,5 +18,10 @@ const Header = (props) => {
 Header.defaultProps = {
     title: 'Task Tracker'
 }
+
+// const headingStyle = {
+//     color: 'red',
+//     backgroundColor: 'white'
+// }
 
 export default Header
